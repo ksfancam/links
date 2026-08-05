@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KSFancam — Links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* All rules are scoped under .ksf-links-page and every class is
+     prefixed with "ksf-" so this can be dropped into a page that
+     already has its own CSS without colliding with it. */
+
+  .ksf-links-page{
+    --ksf-bg: #0a0505;
+    --ksf-bg-card: #160a0a;
+    --ksf-red: #870000;
+    --ksf-red-light: #c81e1e;
+    --ksf-gold: #e3a83b;
+    --ksf-maroon: #5a1c1c;
+    --ksf-text: #f5efe9;
+    --ksf-muted: #b09188;
+    --ksf-line: rgba(245,239,233,0.09);
+
+    margin:0;
+    padding: 56px 20px 70px;
+    background: var(--ksf-bg);
+    color: var(--ksf-text);
+    font-family: 'Manrope', sans-serif;
+    min-height: 100vh;
+    display:flex;
+    justify-content:center;
+    background-image:
+      radial-gradient(ellipse 900px 520px at 50% 0%,   rgba(135,0,0,0.30), transparent 62%),
+      radial-gradient(ellipse 700px 500px at 100% 35%, rgba(227,168,59,0.10), transparent 60%),
+      radial-gradient(ellipse 800px 600px at 0% 65%,   rgba(135,0,0,0.16), transparent 60%),
+      radial-gradient(ellipse 900px 500px at 50% 100%, rgba(90,28,28,0.28), transparent 65%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .ksf-links-page *{ box-sizing: border-box; }
+  .ksf-links-page{ -webkit-text-size-adjust: 100%; }
+
+  .ksf-links-page .ksf-page{ width: 100%; max-width: 480px; }
+
+  /* ---------- HERO ---------- */
+  .ksf-links-page .ksf-hero{ text-align:center; margin-bottom: 40px; position:relative; }
+
+  .ksf-links-page .ksf-spot{
+    position:absolute;
+    top: -60px; left:50%; transform: translateX(-50%);
+    width: 260px; height: 260px;
+    background: conic-gradient(from 0deg, var(--ksf-red), var(--ksf-gold), var(--ksf-maroon), var(--ksf-red));
+    filter: blur(58px);
+    opacity: 0.4;
+    border-radius: 50%;
+    animation: ksf-spin 14s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes ksf-spin{ to{ transform: translateX(-50%) rotate(360deg); } }
+
+  .ksf-links-page .ksf-avatar-wrap{ position:relative; z-index:1; width:104px; height:104px; margin:0 auto 18px; }
+  .ksf-links-page .ksf-avatar{
+    width:100%; height:100%; border-radius:50%;
+    background: linear-gradient(145deg,#241010,#150a0a);
+    border: 2px solid rgba(245,239,233,0.14);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 0 0 6px rgba(135,0,0,0.18), 0 12px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+  .ksf-links-page .ksf-avatar svg{ width:44px; height:44px; opacity:0.55; }
+  .ksf-links-page .ksf-avatar img{ width:100%; height:100%; object-fit:cover; }
+
+  .ksf-links-page .ksf-title{
+    position:relative; z-index:1;
+    font-family:'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 11vw, 52px); letter-spacing: .04em;
+    margin: 0 0 20px; line-height: 1;
+    background: linear-gradient(90deg, #fff, var(--ksf-red-light) 55%, var(--ksf-gold));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  .ksf-links-page .ksf-socials{ position:relative; z-index:1; display:flex; justify-content:center; gap:12px; flex-wrap: wrap; }
+  .ksf-links-page .ksf-social-btn{
+    width:38px; height:38px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background: var(--ksf-bg-card); border: 1px solid var(--ksf-line);
+    color: var(--ksf-muted); text-decoration:none;
+    transition: transform .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .ksf-links-page .ksf-social-btn svg{ width:16px; height:16px; }
+  .ksf-links-page .ksf-social-btn:hover{ transform: translateY(-3px); color:#fff; border-color: var(--ksf-red-light); }
+
+  /* ---------- LINK BLOCKS (solid, brand-colored) ---------- */
+  .ksf-links-page .ksf-section-label{
+    font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.18em;
+    color: var(--ksf-muted); text-transform:uppercase;
+    display:flex; align-items:center; gap:10px; margin: 22px 0 14px 4px;
+  }
+  .ksf-links-page .ksf-section-label::after{ content:''; flex:1; height:1px; background: var(--ksf-line); }
+  .ksf-links-page .ksf-section-label:first-of-type{ margin-top: 0; }
+
+  .ksf-links-page .ksf-link-block{
+    position:relative;
+    display:flex; align-items:center; gap:14px;
+    background: var(--ksf-block-color, var(--ksf-red));
+    border-radius: 14px;
+    padding: 15px 18px;
+    text-decoration:none; color: #fff;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 18px -8px rgba(0,0,0,0.5);
+    transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
+  }
+  .ksf-links-page .ksf-link-block:hover{
+    transform: translateY(-2px) translateX(2px);
+    filter: brightness(1.08);
+    box-shadow: 0 10px 26px -10px var(--ksf-block-color, var(--ksf-red));
+  }
+  .ksf-links-page .ksf-link-block.ksf-muted-block{ opacity: 0.82; }
+
+  .ksf-links-page .ksf-link-icon{
+    position:relative;
+    width: 40px; height: 40px; flex-shrink:0;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.16);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .ksf-links-page .ksf-link-icon svg{ width:20px; height:20px; fill:#fff; }
+  .ksf-links-page .ksf-link-icon .ksf-badge{
+    position:absolute; bottom:-4px; right:-4px;
+    min-width:16px; height:16px; padding:0 3px;
+    border-radius:8px; background:#fff; color: var(--ksf-block-color, var(--ksf-red));
+    font-family:'Space Mono', monospace; font-size:9px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 0 0 2px var(--ksf-block-color, var(--ksf-red));
+  }
+
+  .ksf-links-page .ksf-link-body{ flex:1; min-width:0; }
+  .ksf-links-page .ksf-link-title{ font-weight:800; font-size:15.5px; margin-bottom:1px; }
+  .ksf-links-page .ksf-link-sub{ font-size:12.5px; color: rgba(255,255,255,0.78); }
+  .ksf-links-page .ksf-link-arrow{ color: rgba(255,255,255,0.65); font-size:18px; transition: transform .16s ease; }
+  .ksf-links-page .ksf-link-block:hover .ksf-link-arrow{ transform: translateX(3px); color:#fff; }
+
+  .ksf-links-page .ksf-footer{ text-align:center; margin-top: 30px; color: var(--ksf-muted); font-size: 12px; font-family:'Space Mono', monospace; }
+
+  @media (max-width: 380px){
+    .ksf-links-page{ padding: 40px 14px 50px; }
+    .ksf-links-page .ksf-link-block{ padding: 13px 14px; gap: 12px; }
+    .ksf-links-page .ksf-link-icon{ width:36px; height:36px; }
+  }
+</style>
+</head>
+<body class="ksf-links-page">
+<div class="ksf-page">
+
+  <div class="ksf-hero">
+    <div class="ksf-spot"></div>
+    <div class="ksf-avatar-wrap">
+      <div class="ksf-avatar">
+        <img src="PON-AQUI-TU-GIF.gif" alt="profile"/>
+      </div>
+    </div>
+    <h1 class="ksf-title">KSFANCAM</h1>
+    <div class="ksf-socials">
+      <a class="ksf-social-btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.6-.5-5.3c-.3-1-1-1.8-2-2C18.6 4 12 4 12 4s-6.6 0-8.5.7c-1 .2-1.7 1-2 2C1 8.4 1 12 1 12s0 3.6.5 5.3c.3 1 1 1.7 2 2C5.4 20 12 20 12 20s6.6 0 8.5-.7c1-.3 1.7-1 2-2 .5-1.7.5-5.3.5-5.3zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+      <a class="ksf-social-btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6L2.7 12c-1 .4-1 1.5.1 1.8l4.9 1.5 1.9 5.9c.3.9 1.4 1.1 2 .3l2.7-3.3 5 3.7c.8.6 1.9.2 2.1-.8l3.4-15.4c.3-1.1-.8-2-1.8-1.6zM17.6 8L9.8 14.7l-.3 3.6-1.4-4.3L17 7.5c.4-.2.8.3.4.6z"/></svg></a>
+      <a class="ksf-social-btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Patreon"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="15" cy="9.5" r="5.5"/><rect x="4" y="3" width="3" height="18"/></svg></a>
+    </div>
+  </div>
+
+  <div class="ksf-section-label">Telegram</div>
+
+  <a class="ksf-link-block" style="--ksf-block-color:#229ED9" href="#" target="_blank" rel="noopener noreferrer">
+    <span class="ksf-link-icon">
+      <svg viewBox="0 0 24 24"><path d="M21.9 4.6L2.7 12c-1 .4-1 1.5.1 1.8l4.9 1.5 1.9 5.9c.3.9 1.4 1.1 2 .3l2.7-3.3 5 3.7c.8.6 1.9.2 2.1-.8l3.4-15.4c.3-1.1-.8-2-1.8-1.6zM17.6 8L9.8 14.7l-.3 3.6-1.4-4.3L17 7.5c.4-.2.8.3.4.6z"/></svg>
+    </span>
+    <span class="ksf-link-body">
+      <div class="ksf-link-title">Telegram</div>
+      <div class="ksf-link-sub">Free channel</div>
+    </span>
+    <span class="ksf-link-arrow">›</span>
+  </a>
+
+  <a class="ksf-link-block" style="--ksf-block-color:#B8862E" href="#" target="_blank" rel="noopener noreferrer">
+    <span class="ksf-link-icon">
+      <svg viewBox="0 0 24 24"><path d="M21.9 4.6L2.7 12c-1 .4-1 1.5.1 1.8l4.9 1.5 1.9 5.9c.3.9 1.4 1.1 2 .3l2.7-3.3 5 3.7c.8.6 1.9.2 2.1-.8l3.4-15.4c.3-1.1-.8-2-1.8-1.6zM17.6 8L9.8 14.7l-.3 3.6-1.4-4.3L17 7.5c.4-.2.8.3.4.6z"/></svg>
+      <span class="ksf-badge">★</span>
+    </span>
+    <span class="ksf-link-body">
+      <div class="ksf-link-title">Telegram Premium</div>
+      <div class="ksf-link-sub">Paid — takes over from my old Patreon</div>
+    </span>
+    <span class="ksf-link-arrow">›</span>
+  </a>
+
+  <div class="ksf-section-label">YouTube</div>
+
+  <a class="ksf-link-block" style="--ksf-block-color:#FF0000" href="#" target="_blank" rel="noopener noreferrer">
+    <span class="ksf-link-icon">
+      <svg viewBox="0 0 24 24"><path d="M23 12s0-3.6-.5-5.3c-.3-1-1-1.8-2-2C18.6 4 12 4 12 4s-6.6 0-8.5.7c-1 .2-1.7 1-2 2C1 8.4 1 12 1 12s0 3.6.5 5.3c.3 1 1 1.7 2 2C5.4 20 12 20 12 20s6.6 0 8.5-.7c1-.3 1.7-1 2-2 .5-1.7.5-5.3.5-5.3zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+      <span class="ksf-badge">3</span>
+    </span>
+    <span class="ksf-link-body">
+      <div class="ksf-link-title">YouTube KS 3</div>
+      <div class="ksf-link-sub">Compilation Idols</div>
+    </span>
+    <span class="ksf-link-arrow">›</span>
+  </a>
+
+  <a class="ksf-link-block" style="--ksf-block-color:#CC1B1B" href="#" target="_blank" rel="noopener noreferrer">
+    <span class="ksf-link-icon">
+      <svg viewBox="0 0 24 24"><path d="M23 12s0-3.6-.5-5.3c-.3-1-1-1.8-2-2C18.6 4 12 4 12 4s-6.6 0-8.5.7c-1 .2-1.7 1-2 2C1 8.4 1 12 1 12s0 3.6.5 5.3c.3 1 1 1.7 2 2C5.4 20 12 20 12 20s6.6 0 8.5-.7c1-.3 1.7-1 2-2 .5-1.7.5-5.3.5-5.3zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+      <span class="ksf-badge">2</span>
+    </span>
+    <span class="ksf-link-body">
+      <div class="ksf-link-title">YouTube KS 2</div>
+      <div class="ksf-link-sub">Compilation Mix Idols</div>
+    </span>
+    <span class="ksf-link-arrow">›</span>
+  </a>
+
+  <a class="ksf-link-block" style="--ksf-block-color:#870000" href="#" target="_blank" rel="noopener noreferrer">
+    <span class="ksf-link-icon">
+      <svg viewBox="0 0 24 24"><path d="M23 12s0-3.6-.5-5.3c-.3-1-1-1.8-2-2C18.6 4 12 4 12 4s-6.6 0-8.5.7c-1 .2-1.7 1-2 2C1 8.4 1 12 1 12s0 3.6.5 5.3c.3 1 1 1.7 2 2C5.4 20 12 20 12 20s6.6 0 8.5-.7c1-.3 1.7-1 2-2 .5-1.7.5-5.3.5-5.3zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+    </span>
+    <span class="ksf-link-body">
+      <div class="ksf-link-title">YouTube KS</div>
+      <div class="ksf-link-sub">Compilation Kpop Groups</div>
+    </span>
+    <span class="ksf-link-arrow">›</span>
+  </a>
+
+  <div class="ksf-section-label">Patreon</div>
+
+  <a class="ksf-link-block" style="--ksf-block-color:#FF424D" href="#" target="_blank" rel="noopener noreferrer">
+    <span class="ksf-link-icon">
+      <svg viewBox="0 0 24 24"><circle cx="15" cy="9.5" r="5.5"/><rect x="4" y="3" width="3" height="18"/></svg>
+    </span>
+    <span class="ksf-link-body">
+      <div class="ksf-link-title">Patreon — Fancam Hunter</div>
+      <div class="ksf-link-sub">Fancam collection</div>
+    </span>
+    <span class="ksf-link-arrow">›</span>
+  </a>
+
+  <a class="ksf-link-block ksf-muted-block" style="--ksf-block-color:#7A5457" href="#" target="_blank" rel="noopener noreferrer">
+    <span class="ksf-link-icon">
+      <svg viewBox="0 0 24 24"><circle cx="15" cy="9.5" r="5.5"/><rect x="4" y="3" width="3" height="18"/></svg>
+    </span>
+    <span class="ksf-link-body">
+      <div class="ksf-link-title">Patreon — KS VIP</div>
+      <div class="ksf-link-sub">Inactive — video requests only</div>
+    </span>
+    <span class="ksf-link-arrow">›</span>
+  </a>
+
+  <div class="ksf-section-label">Website</div>
+
+  <a class="ksf-link-block" style="--ksf-block-color:#C9932B" href="#" target="_blank" rel="noopener noreferrer">
+    <span class="ksf-link-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+    </span>
+    <span class="ksf-link-body">
+      <div class="ksf-link-title">Website</div>
+      <div class="ksf-link-sub">My site</div>
+    </span>
+    <span class="ksf-link-arrow">›</span>
+  </a>
+
+  <div class="ksf-footer">© KSFANCAM · updated 2026</div>
+
+</div>
+</body>
+</html>
